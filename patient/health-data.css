@@ -1,0 +1,186 @@
+/* --- Base & Layout --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fc;
+    color: #1f2937;
+}
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* --- Header --- */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.content-header h2 {
+    font-size: 2rem;
+    color: #1e3a8a;
+}
+.btn {
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-primary {
+    background-color: #2563eb;
+    color: white;
+    width: 100%;
+}
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+.btn-outline {
+    background-color: transparent;
+    color: #334155;
+    border-color: #cbd5e1;
+}
+.btn-outline:hover {
+    background-color: #f1f5f9;
+}
+
+/* --- Layout Grid --- */
+.health-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* --- Form Panel (Left) --- */
+.form-panel {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.form-panel h3 {
+    font-size: 1.25rem;
+    color: #1e3a8a;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+.success-message {
+    color: #166534;
+    background-color: #dcfce7;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* --- Data Panel (Right) --- */
+.data-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.widget {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.widget h3 {
+    font-size: 1.25rem;
+    color: #1e3a8a;
+    margin-bottom: 1.5rem;
+}
+.chart-container {
+    position: relative;
+    height: 250px;
+}
+
+/* --- History Table --- */
+#history-table-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.history-table th, .history-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+.history-table th {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4b5563;
+    background-color: #f9fafb;
+}
+.history-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+/* --- Loading & Empty States --- */
+.loading-container, .empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: #6b7280;
+}
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #2563eb;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .health-layout {
+        grid-template-columns: 1fr;
+    }
+}

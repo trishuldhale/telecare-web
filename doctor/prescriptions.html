@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Create Prescription | Doctor Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="prescriptions.css" />
+</head>
+<body>
+    <div class="page-container">
+        <header class="content-header">
+            <h2>Create Prescription</h2>
+            <a href="../doctor/dr2.html" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </header>
+
+        <main class="prescription-layout">
+            <!-- Left Panel: Create New Prescription Form -->
+            <div class="form-panel">
+                <h3><i class="fas fa-file-medical"></i> New Prescription</h3>
+                <form id="prescription-form">
+                    <div class="form-group">
+                        <label for="patient-select">Select Patient</label>
+                        <select id="patient-select" required>
+                            <option value="">Loading patients...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="medication-name">Medication Name</label>
+                        <input type="text" id="medication-name" placeholder="e.g., Paracetamol" required>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="dosage">Dosage</label>
+                            <input type="text" id="dosage" placeholder="e.g., 500mg">
+                        </div>
+                        <div class="form-group">
+                            <label for="frequency">Frequency</label>
+                            <input type="text" id="frequency" placeholder="e.g., Twice a day">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">Duration</label>
+                        <input type="text" id="duration" placeholder="e.g., 7 days">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Additional Notes</label>
+                        <textarea id="notes" rows="4" placeholder="e.g., Take after meals."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Issue Prescription</button>
+                    <p id="form-success-message" class="success-message"></p>
+                </form>
+            </div>
+
+            <!-- Right Panel: Recent Prescriptions -->
+            <div class="history-panel">
+                <h3><i class="fas fa-history"></i> Recently Issued</h3>
+                <div id="history-loading" class="loading-container">
+                    <div class="spinner"></div>
+                </div>
+                <div id="history-list">
+                    <!-- Prescription history cards will be inserted here -->
+                </div>
+                <div id="history-empty-state" class="empty-state" style="display: none;">
+                    <p>You have not issued any prescriptions yet.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="prescriptions.js"></script>
+</body>
+</html>

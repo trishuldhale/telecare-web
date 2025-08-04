@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Consultation | TeleCare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="consult.css" />
+</head>
+<body>
+    <div class="call-layout">
+        <!-- Main Video and Controls Area -->
+        <div class="call-container">
+            <div class="call-header">
+                <h3 id="call-with-info">Connecting...</h3>
+                <span class="timer" id="call-timer">00:00</span>
+            </div>
+
+            <div class="video-grid">
+                <div class="remote-video-container">
+                    <video id="remote-video" autoplay playsinline></video>
+                    <div id="placeholder" class="placeholder-avatar">
+                        <i class="fas fa-user-doctor"></i>
+                        <p id="remote-user-name">Waiting for user to connect...</p>
+                    </div>
+                </div>
+                <div class="local-video-container">
+                    <video id="local-video" autoplay playsinline muted></video>
+                </div>
+            </div>
+
+            <div class="call-controls">
+                <button class="control-btn" id="toggle-mic"><i class="fas fa-microphone"></i></button>
+                <button class="control-btn" id="toggle-camera"><i class="fas fa-video"></i></button>
+                <button class="control-btn" id="toggle-chat"><i class="fas fa-comment-dots"></i></button>
+                <button class="control-btn end-call" id="end-call"><i class="fas fa-phone-slash"></i></button>
+            </div>
+        </div>
+
+        <!-- Chat Panel Sidebar -->
+        <aside class="chat-panel" id="chat-panel">
+            <div class="chat-header">
+                <h3>Chat</h3>
+            </div>
+            <div class="message-area" id="message-area">
+                <!-- Messages will appear here -->
+            </div>
+            <footer class="chat-footer">
+                <form id="message-form" class="message-form">
+                    <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off" />
+                    <button type="submit" class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </footer>
+        </aside>
+    </div>
+
+    <script type="module" src="consult.js"></script>
+</body>
+</html>

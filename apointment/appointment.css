@@ -1,0 +1,334 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: #f8f9fc;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+.appointment-page-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Header */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.content-header h2 {
+    font-size: 2rem;
+    color: #1e3a8a;
+}
+.btn {
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-primary {
+    background-color: #2563eb;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+.btn-outline {
+    background-color: transparent;
+    color: #334155;
+    border-color: #cbd5e1;
+}
+.btn-outline:hover {
+    background-color: #f1f5f9;
+    border-color: #94a3b8;
+}
+.btn-icon {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #64748b;
+}
+.btn-icon:hover {
+    color: #1e3a8a;
+}
+
+/* --- Appointment Container & Steps --- */
+.appointment-container {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+.appointment-step {
+    display: none;
+}
+.appointment-step.active {
+    display: block;
+}
+.appointment-step h3 {
+    font-size: 1.5rem;
+    color: #1e3a8a;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 15px;
+}
+
+/* --- Doctor Card & Grid --- */
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+.doctor-card {
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+}
+.doctor-card:hover {
+    border-color: #93c5fd;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.doctor-card.selected {
+    border-color: #2563eb;
+    background-color: #eff6ff;
+}
+.doctor-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.doctor-avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.doctor-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.doctor-specialty {
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+/* --- Calendar --- */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.calendar-header h4 {
+    font-size: 1.2rem;
+}
+.calendar-weekdays, .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+}
+.calendar-weekdays div {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #475569;
+}
+.calendar-day {
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.calendar-day.other-month {
+    color: #cbd5e1;
+}
+.calendar-day:not(.disabled):not(.other-month):hover {
+    background-color: #eff6ff;
+}
+.calendar-day.disabled {
+    color: #cbd5e1;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+.calendar-day.selected {
+    background-color: #2563eb;
+    color: white;
+}
+
+/* --- Time Slots --- */
+.time-slots-container {
+    margin-top: 30px;
+}
+.time-slots-container h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+.time-slot {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.time-slot:hover {
+    border-color: #2563eb;
+}
+.time-slot.selected {
+    background-color: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+/* --- Step 3 & Form --- */
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.selected-doctor, .selected-time {
+    background-color: #f8fafc;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+/* --- Modal Styles --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+.modal.active {
+    display: flex;
+}
+.modal-content {
+    background-color: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-header h3 {
+    margin: 0;
+    color: #1e3a8a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.modal-header .fa-check-circle {
+    color: #22c55e;
+}
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #9ca3af;
+}
+.modal-body {
+    padding: 25px;
+}
+.confirmation-item {
+    margin-bottom: 16px;
+}
+.confirmation-label {
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 4px;
+}
+.confirmation-value {
+    color: #1f2937;
+}
+.modal-footer {
+    padding: 20px;
+    background-color: #f8fafc;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Loading States */
+.loading-container {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6b7280;
+}
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #2563eb;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+.spinner-small {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #2563eb;
+    width: 24px;
+    height: 24px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

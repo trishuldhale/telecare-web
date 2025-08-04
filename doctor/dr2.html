@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Dashboard | TeleCare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="doctor.css" />
+</head>
+<body>
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="user-avatar">
+          <img src="https://placehold.co/90x90/E0E7FF/1E3A8A?text=Dr" alt="Doctor Avatar" />
+        </div>
+        <h3 id="doctor-name">Loading...</h3>
+        <p id="doctor-specialization">Loading...</p>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+          <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+          <li><a href="../patients_list/list.html"><i class="fas fa-user-injured"></i> Patients</a></li>
+          <li><a href="prescriptions.html"><i class="fas fa-prescription"></i> Prescriptions</a></li>
+          <li><a href="../teleconsult/chat.html"><i class="fas fa-comments"></i> Messages</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="content-header">
+        <h2>Today's Appointments</h2>
+        <div class="header-actions">
+          <div class="availability-toggle">
+            <label>Availability:</label>
+            <label class="switch">
+              <input type="checkbox" checked />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </header>
+
+      <div class="appointment-timeline">
+        <div class="timeline-header">
+          <div class="time-column">Time</div>
+          <div class="patient-column">Patient</div>
+          <div class="status-column">Status</div>
+          <div class="action-column">Action</div>
+        </div>
+        <div id="appointments-list">
+            <!-- Loading and Empty states will be shown here -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- This script MUST point to doctor.js -->
+  <script type="module" src="doctorr.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up | TeleCare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Link to your sign-up CSS file -->
+  <link rel="stylesheet" href="sign_in.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1>Create Your Account</h1>
+        <p>Join TeleCare to connect with healthcare providers.</p>
+      </div>
+
+      <form id="signup-form" class="auth-form" novalidate>
+        <!-- User Type Selection -->
+        <div class="form-group">
+          <label class="main-label">I am a:</label>
+          <div class="radio-group">
+            <label><input type="radio" name="userType" value="patient" checked> Patient</label>
+            <label><input type="radio" name="userType" value="doctor"> Doctor</label>
+          </div>
+        </div>
+
+        <!-- Common Fields -->
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="e.g., John Doe" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Minimum 6 characters" required minlength="6" />
+        </div>
+
+        <!-- Fields for Patients -->
+        <div class="form-group patient-only">
+          <label for="age">Age</label>
+          <input type="number" id="age" placeholder="e.g., 35" />
+        </div>
+        <div class="form-group patient-only">
+          <label for="gender">Gender</label>
+          <select id="gender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <!-- Fields for Doctors -->
+        <div class="form-group doctor-only" style="display: none;">
+          <label for="medicalLicense">Medical License Number</label>
+          <input type="text" id="medicalLicense" placeholder="e.g., 123456789" />
+        </div>
+        <div class="form-group doctor-only" style="display: none;">
+          <label for="specialization">Specialization</label>
+          <select id="specialization">
+            <option value="">Select Specialization</option>
+            <option value="Cardiologist">Cardiologist</option>
+            <option value="Dermatologist">Dermatologist</option>
+            <option value="Neurologist">Neurologist</option>
+            <option value="Pediatrician">Pediatrician</option>
+            <option value="General Physician">General Physician</option>
+          </select>
+        </div>
+        
+        <!-- Error Message -->
+        <p id="signup-error" class="error-message"></p>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Create Account</button>
+      </form>
+
+      <!-- Footer Link to Sign In -->
+      <div class="auth-footer">
+        <p>Already have an account? <a href="../auth/login.html">Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link to your sign-up JavaScript file -->
+  <script type="module" src="Sign_in.js"></script>
+</body>
+</html>

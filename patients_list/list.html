@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booked Patients | Doctor Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="llist.css" />
+</head>
+<body>
+  <div class="patients-page">
+    <header class="patients-header">
+      <h1><i class="fas fa-user-injured"></i> Booked Patients</h1>
+      <p>A list of all patients with scheduled appointments.</p>
+      <div class="header-nav">
+          <a href="../doctor/dr2.html" class="nav-link"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+          <a href="#" id="logout-btn" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </header>
+
+    <main class="patients-main">
+      <div id="loading-state" class="loading-container">
+        <div class="spinner"></div>
+        <p>Loading patient data...</p>
+      </div>
+      <div id="empty-state" class="empty-container" style="display: none;">
+        <i class="fas fa-folder-open"></i>
+        <p>No patients have booked an appointment with you yet.</p>
+      </div>
+      <table class="patients-table" style="display: none;">
+        <thead>
+          <tr>
+            <th>Patient Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Appointment Date</th>
+            <th>Appointment Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="patientList">
+          <!-- Patient data will be dynamically inserted here by JavaScript -->
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <script type="module" src="list.js"></script>
+</body>
+</html>

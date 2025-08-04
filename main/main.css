@@ -1,0 +1,209 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #1a1a1a;
+    background-color: #f8faff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* NAVIGATION */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar-logo img {
+    height: 50px;
+}
+.navbar-buttons {
+    display: flex;
+    gap: 1rem;
+}
+.navbar-buttons button {
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease;
+    font-size: 0.95rem;
+}
+.navbar-buttons button:hover {
+    background-color: #1d4ed8;
+}
+.navbar-buttons .btn-secondary {
+    background-color: #eef2ff;
+    color: #2563eb;
+}
+.navbar-buttons .btn-secondary:hover {
+    background-color: #e0e7ff;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #e0f7ff, #f8faff);
+    padding: 80px 20px;
+    text-align: center;
+}
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: #1e3a8a;
+    font-weight: 800;
+}
+.hero-text h1 span {
+    color: #2563eb;
+}
+.hero-text p {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    color: #4b5563;
+}
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.hero-buttons button {
+    padding: 14px 28px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.hero-buttons button:first-child {
+    background-color: #2563eb;
+    color: white;
+}
+.hero-buttons button:last-child {
+    background-color: #fff;
+    color: #1e3a8a;
+    border: 1px solid #e5e7eb;
+}
+
+/* FEATURES */
+.features {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+.features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #1e3a8a;
+}
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.feature-card {
+    background: #f8faff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+}
+.feature-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #2563eb;
+}
+.feature-card h3 {
+    font-size: 1.3rem;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+.feature-card p {
+    color: #4b5563;
+    font-size: 1rem;
+}
+
+/* CTA */
+.cta-section {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* DASHBOARD SECTION */
+.dashboard-preview {
+    padding: 80px 20px;
+    background-color: #f0f4ff;
+    text-align: center;
+}
+.dashboard-preview h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #1e3a8a;
+}
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.dashboard-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+}
+.dashboard-card h3 {
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+.dashboard-card p {
+    color: #333;
+    font-size: 0.95rem;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #e7f0fa;
+    color: #4b5563;
+    font-size: 0.9rem;
+}

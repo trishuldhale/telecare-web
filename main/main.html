@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TeleCare – Your Health, Connected</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-logo">
+            <!-- Make sure this path is correct -->
+            <img src="../img/Telecare.png" alt="TeleCare Logo" />
+        </div>
+        <div class="navbar-buttons" id="authButtons">
+            <!-- Buttons are dynamically injected here by main.js -->
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Your Health,<br><span>Connected</span></h1>
+            <p>Experience the future of healthcare with our all-in-one telemedicine platform. 
+            Consult doctors, monitor your health, and stay connected—anytime, anywhere.</p>
+            <div class="hero-buttons">
+                <button id="getStartedBtn">Get Started</button>
+                <button onclick="document.getElementById('features').scrollIntoView({ behavior: 'smooth' });">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard" class="dashboard-preview">
+        <h2>Explore the Platform</h2>
+        <div class="dashboard-grid">
+            <div class="dashboard-card" onclick="location.href='../apointment/appoint.html'">
+                <h3>Book Appointment</h3>
+                <p>Find and schedule consultations effortlessly.</p>
+            </div>
+            <div class="dashboard-card" onclick="location.href='../upcoming/upcoming2.html'">
+                <h3>Upcoming Appointments</h3>
+                <p>Stay on top of your health schedule.</p>
+            </div>
+            <div class="dashboard-card" onclick="location.href='../patient/patient.html'">
+                <h3>Patient Dashboard</h3>
+                <p>Monitor your health data and trends.</p>
+            </div>
+            <div class="dashboard-card" onclick="location.href='../doctor/dr2.html'">
+                <h3>Doctor Dashboard</h3>
+                <p>View patient info, consultations, and prescriptions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Complete Healthcare at Your Fingertips</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon">📹</div>
+                <h3>Video Consultations</h3>
+                <p>Connect with certified doctors securely over video.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📈</div>
+                <h3>Remote Monitoring</h3>
+                <p>Track vitals and health metrics in real-time.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📅</div>
+                <h3>Easy Scheduling</h3>
+                <p>Book appointments instantly with your preferred doctors.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🩺</div>
+                <h3>ePrescriptions</h3>
+                <p>Receive digital prescriptions and manage records securely.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🛡️</div>
+                <h3>Data Privacy</h3>
+                <p>End-to-end encryption ensures complete confidentiality.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📞</div>
+                <h3>24/7 Support</h3>
+                <p>We’re here for you anytime—day or night.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Start Your Healthcare Journey Today</h2>
+        <p>Join thousands already using <strong>TeleCare</strong> for smart, secure care.</p>
+    </section>
+
+    <footer>
+        &copy; 2025 TeleCare. All rights reserved.
+    </footer>
+
+    <!-- The script tag MUST have type="module" -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patient Dashboard | TeleCare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Assuming a general styles.css and a specific patient.css -->
+  <link rel="stylesheet" href="patient.css" />
+</head>
+<body>
+  <div class="dashboard-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="user-avatar">
+          <!-- Placeholder, can be made dynamic later -->
+          <img src="https://placehold.co/90x90/E0E7FF/1E3A8A?text=U" alt="User Avatar" />
+        </div>
+        <!-- Dynamic placeholders for JS -->
+        <h3 id="user-name">Loading...</h3>
+        <p id="user-role">Loading...</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="active"><a href="\main\main.html"><i class="icon-dashboard"></i> Dashboard</a></li>
+          <li><a href="../apointment/appoint.html"><i class="icon-calendar"></i> Book Appointment</a></li>
+          <li><a href="health-data.html"><i class="icon-heart"></i> Health Data</a></li>
+          <li><a href="prescriptions.html"><i class="icon-prescription"></i> Prescriptions</a></li>
+          <li><a href="#"><i class="icon-message"></i> Messages</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" id="logout-btn">
+          <i class="icon-logout"></i> Logout
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="content-header">
+        <h2>Dashboard Overview</h2>
+        <div class="header-actions">
+          <button class="btn btn-primary" onclick="location.href='../apointment/appoint.html'">
+            <i class="icon-plus"></i> New Appointment
+          </button>
+        </div>
+      </header>
+
+      <div class="dashboard-widgets">
+        <div class="widget">
+          <h3>Upcoming Appointments</h3>
+          <div class="appointment-list">
+            <!-- This section can be populated dynamically later -->
+            <div class="appointment-card">
+              <div class="appointment-info">
+                <h4>Dr. Sarah Johnson</h4>
+                <p>Cardiologist</p>
+                <div class="appointment-meta">
+                  <span class="date">Aug 5, 2025, 3:00 PM</span>
+                  <span class="status confirmed">Confirmed</span>
+                </div>
+              </div>
+              <a href="#" class="btn btn-outline">Join Consultation</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h3>Health Summary</h3>
+          <div class="health-metrics">
+            <!-- These values will be dynamic -->
+            <div class="metric-card">
+              <div class="metric-value" id="health-bpm">--</div>
+              <div class="metric-label">Heart Rate (BPM)</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value" id="health-bp">--/--</div>
+              <div class="metric-label">Blood Pressure</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value" id="health-spo2">--%</div>
+              <div class="metric-label">Oxygen (SpO2)</div>
+            </div>
+          </div>
+          <a href="#" class="btn-text">View Detailed Report →</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- This script must be a module to use imports -->
+  <script type="module" src="patient.js"></script>
+</body>
+</html>

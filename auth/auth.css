@@ -1,0 +1,109 @@
+/* This file can be used for login.html, Sign_up.html, and forgot-password.html */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #f0f4ff;
+  color: #1a1a1a;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+.auth-container {
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+}
+.auth-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 30, 100, 0.1);
+  width: 100%;
+}
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.auth-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+.auth-header p {
+  font-size: 1rem;
+  color: #555;
+}
+.auth-form .form-group {
+  margin-bottom: 20px;
+}
+.auth-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+.auth-form input, .auth-form select, .auth-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.auth-form input:focus, .auth-form select:focus, .auth-form textarea:focus {
+  border-color: #2463eb;
+  box-shadow: 0 0 0 3px rgba(36, 99, 235, 0.2);
+  outline: none;
+}
+.forgot-password {
+  display: block;
+  margin-top: 8px;
+  text-align: right;
+  font-size: 0.9rem;
+  color: #2463eb;
+  text-decoration: none;
+}
+.btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+.btn-primary {
+  background-color: #2463eb;
+  color: white;
+  margin-top: 10px;
+}
+.auth-footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 0.95rem;
+}
+.auth-footer a {
+  color: #2463eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+.message, .error-message {
+  font-size: 0.9rem;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 500;
+  min-height: 1.2em;
+  color: #dc2626; /* Red for errors by default */
+}
+.message.success, .error-message.success {
+    color: #166534; /* Green for success */
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | TeleCare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+    <div class="appointment-page-container">
+        <header class="content-header">
+            <h2>Book an Appointment</h2>
+            <div class="header-actions">
+                <a href="../patient/patient.html" class="btn btn-outline">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+            </div>
+        </header>
+        
+        <div class="appointment-container">
+            <!-- Step 1: Select Doctor -->
+            <div class="appointment-step active" id="step-1">
+                <h3>1. Select a Doctor</h3>
+                <div id="doctor-list-loading" class="loading-container">
+                    <div class="spinner"></div>
+                    <p>Finding available doctors...</p>
+                </div>
+                <div class="doctor-grid" id="doctor-list">
+                    <!-- Doctor cards will be inserted here by JS -->
+                </div>
+            </div>
+            
+            <!-- Step 2: Select Date & Time -->
+            <div class="appointment-step" id="step-2">
+                <h3>2. Select Date & Time</h3>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button class="btn btn-icon" id="prev-month">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <h4 id="current-month">Loading...</h4>
+                        <button class="btn btn-icon" id="next-month">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="calendar-weekdays">
+                        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                    </div>
+                    <div class="calendar-grid" id="calendar-body">
+                        <!-- Calendar days will be inserted here by JS -->
+                    </div>
+                </div>
+                
+                <div class="time-slots-container">
+                    <h4>Available Time Slots</h4>
+                    <div id="time-slots-loading" class="loading-container" style="display: none;">
+                         <div class="spinner-small"></div>
+                         <p>Checking availability...</p>
+                    </div>
+                    <div class="time-slots" id="time-slots">
+                        <!-- Time slots will be inserted here by JS -->
+                    </div>
+                </div>
+                 <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="back-to-doctors">Back</button>
+                </div>
+            </div>
+            
+            <!-- Step 3: Appointment Details & Confirmation -->
+            <div class="appointment-step" id="step-3">
+                <h3>3. Confirm Appointment Details</h3>
+                <form id="appointment-form">
+                    <div class="form-group">
+                        <label>Selected Doctor</label>
+                        <div class="selected-doctor" id="selected-doctor-display">
+                            <!-- Selected doctor info will be inserted here -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Appointment Date & Time</label>
+                        <div class="selected-time" id="selected-time-display">
+                            <!-- Selected time info will be inserted here -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="symptoms">Symptoms / Reason for Visit</label>
+                        <textarea id="symptoms" rows="4" placeholder="Describe your symptoms or reason for visit..."></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="back-to-time">Back</button>
+                        <button type="submit" class="btn btn-primary">Confirm Appointment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-check-circle"></i> Appointment Confirmed!</h3>
+                <button class="close-btn" id="close-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body" id="confirmation-details">
+                <!-- Confirmation details will be inserted here -->
+            </div>
+            <div class="modal-footer">
+                <a href="../patient/patient.html" class="btn btn-primary">Go to Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="appointment.js"></script>
+</body>
+</html>

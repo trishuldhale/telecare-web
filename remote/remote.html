@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Monitoring | TeleHealth Pro</title>
+    <link rel="stylesheet" href="\remote\remote.css">
+    <link rel="stylesheet" href="../css/monitoring.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        
+        
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Health Monitoring</h2>
+                <div class="header-actions">
+                    <div class="time-range-selector">
+                        <select id="time-range">
+                            <option value="24h">Last 24 Hours</option>
+                            <option value="7d">Last 7 Days</option>
+                            <option value="30d">Last 30 Days</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="monitoring-container">
+                <div class="vital-card">
+                    <div class="vital-header">
+                        <h3>Heart Rate</h3>
+                        <div class="vital-status">
+                            <span class="status normal">Normal</span>
+                            <span class="current-value">72 BPM</span>
+                        </div>
+                    </div>
+                    <div class="vital-chart" id="heart-rate-chart">
+                      
+                    </div>
+                </div>
+                
+                <div class="vital-card">
+                    <div class="vital-header">
+                        <h3>Blood Pressure</h3>
+                        <div class="vital-status">
+                            <span class="status elevated">Elevated</span>
+                            <span class="current-value">142/88 mmHg</span>
+                        </div>
+                    </div>
+                    <div class="vital-chart" id="blood-pressure-chart">
+                        
+                    </div>
+                </div>
+                
+                <div class="vital-grid">
+                    <div class="small-vital-card">
+                        <h4>SpO2</h4>
+                        <div class="vital-value">98%</div>
+                        <div class="vital-trend up">▲ 2%</div>
+                    </div>
+                    
+                    <div class="small-vital-card">
+                        <h4>Temperature</h4>
+                        <div class="vital-value">98.6°F</div>
+                        <div class="vital-trend stable">→</div>
+                    </div>
+                    
+                    <div class="small-vital-card">
+                        <h4>Steps</h4>
+                        <div class="vital-value">8,542</div>
+                        <div class="vital-trend down">▼ 12%</div>
+                    </div>
+                    
+                    <div class="small-vital-card">
+                        <h4>Sleep</h4>
+                        <div class="vital-value">7h 22m</div>
+                        <div class="vital-trend up">▲ 45m</div>
+                    </div>
+                </div>
+                
+                <div class="device-section">
+                    <h3>Connected Devices</h3>
+                    <div class="device-list">
+                        <div class="device-card">
+                            <div class="device-icon">
+                                <i class="icon-heart-rate"></i>
+                            </div>
+                            <div class="device-info">
+                                <h4>Fitbit Charge 4</h4>
+                                <p>Last synced: 15 min ago</p>
+                            </div>
+                            <div class="device-actions">
+                                <button class="btn btn-text">Settings</button>
+                            </div>
+                        </div>
+                        
+                        <div class="device-card">
+                            <div class="device-icon">
+                                <i class="icon-blood-pressure"></i>
+                            </div>
+                            <div class="device-info">
+                                <h4>Omron Blood Pressure Monitor</h4>
+                                <p>Last synced: 2 hours ago</p>
+                            </div>
+                            <div class="device-actions">
+                                <button class="btn btn-text">Settings</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-outline">
+                        <i class="icon-plus"></i> Connect New Device
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="\remote\remote.js"></script>
+</body>
+</html>
